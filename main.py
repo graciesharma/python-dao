@@ -24,9 +24,9 @@ def main():
     department_dao = DepartmentDAO()
 
     # add employees
-    emp1 = Employee("E001", "John Doe", 30, "HR")
-    emp2 = Employee("E002", "Jane Smith", 35, "IT")
-    emp3 = Employee("E003", "Mike Johnson", 28, "Finance")
+    emp1 = Employee("E001", "Gracie Sharma", 21, "HR")
+    emp2 = Employee("E002", "Raghav GC", 20, "IT")
+    emp3 = Employee("E003", "Yunish Shrestha", 21, "Finance")
 
     employee_dao.add_employee(emp1)
     employee_dao.add_employee(emp2)
@@ -70,7 +70,7 @@ def main():
     print_departments(department_dao.get_all_departments())
 
     # remove a department
-    department_id = "D003"  # Change this to the department ID you want to remove
+    department_id = "D003" 
     department_dao.remove_department(department_id)
     print("After removing a department (D003):")
     print_departments(department_dao.get_all_departments())
