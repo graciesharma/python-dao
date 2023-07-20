@@ -23,7 +23,7 @@ def main():
     employee_dao = EmployeeDAO()
     department_dao = DepartmentDAO()
 
-    # Adding employees
+    # add employees
     emp1 = Employee("E001", "John Doe", 30, "HR")
     emp2 = Employee("E002", "Jane Smith", 35, "IT")
     emp3 = Employee("E003", "Mike Johnson", 28, "Finance")
@@ -32,7 +32,7 @@ def main():
     employee_dao.add_employee(emp2)
     employee_dao.add_employee(emp3)
 
-    # Adding departments
+    # add departments
     dept1 = Department("D001", "HR")
     dept2 = Department("D002", "IT")
     dept3 = Department("D003", "Finance")
@@ -41,7 +41,7 @@ def main():
     department_dao.add_department(dept2)
     department_dao.add_department(dept3)
 
-    # Associating employees with departments
+    # add employees with departments
     dept1.add_employee(emp1)
     dept2.add_employee(emp2)
     dept3.add_employee(emp3)
@@ -52,21 +52,27 @@ def main():
     print("All Departments:")
     print_departments(department_dao.get_all_departments())
 
-    # Removing an employee
+    # remove an employee
     employee_dao.remove_employee("E002")
     print("After removing an employee (E002):")
     print_employees(employee_dao.get_all_employees())
 
-    # Updating an employee's department
+    # update employee's department
     emp1.set_department("IT")
     employee_dao.update_employee("E001", emp1)
     print("After updating employee's department (E001):")
     print_employees(employee_dao.get_all_employees())
 
-    # Updating a department's name
+    # update department's name
     dept2.set_name("Information Technology")
     department_dao.update_department("D002", dept2)
     print("After updating department's name (D002):")
+    print_departments(department_dao.get_all_departments())
+
+    # remove a department
+    department_id = "D003"  # Change this to the department ID you want to remove
+    department_dao.remove_department(department_id)
+    print("After removing a department (D003):")
     print_departments(department_dao.get_all_departments())
 
 if __name__ == "__main__":
